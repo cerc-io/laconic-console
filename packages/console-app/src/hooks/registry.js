@@ -2,7 +2,7 @@
 // Copyright 2020 DXOS.org
 //
 
-import { Registry } from '@wirelineio/registry-client';
+import { Registry } from 'laconic-sdk';
 
 import { getServiceUrl } from '../util/config';
 

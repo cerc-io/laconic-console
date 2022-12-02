@@ -31,9 +31,9 @@ const getAppUrl = (config, { wrn }) => {
  * @param {string} name
  * @param {string} [text]
  */
-const AppLink = ({ config, wrn, text }) => {
-  const fullURL = getAppUrl(config, { wrn });
-  return <Link href={fullURL} target={wrn}>{text || wrn}</Link>;
+const AppLink = ({ config, crn, text }) => {
+  const fullURL = getAppUrl(config, { crn });
+  return <Link href={fullURL} target={crn}>{text || crn}</Link>;
 };
 
 export default AppLink;

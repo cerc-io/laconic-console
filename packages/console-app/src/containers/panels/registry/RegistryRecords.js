@@ -31,13 +31,13 @@ const useStyles = makeStyles(theme => ({
 
 const types = [
   { key: null, label: 'ALL' },
-  { key: 'wrn:kube', label: 'Kube' },
-  { key: 'wrn:service', label: 'Service' },
-  { key: 'wrn:app', label: 'App' },
-  { key: 'wrn:bot', label: 'Bot' },
-  { key: 'wrn:bot-factory', label: 'Bot Factory' },
-  { key: 'wrn:file', label: 'File' },
-  { key: 'wrn:type', label: 'Type' }
+  { key: 'crn:kube', label: 'Kube' },
+  { key: 'crn:service', label: 'Service' },
+  { key: 'crn:app', label: 'App' },
+  { key: 'crn:bot', label: 'Bot' },
+  { key: 'crn:bot-factory', label: 'Bot Factory' },
+  { key: 'crn:file', label: 'File' },
+  { key: 'crn:type', label: 'Type' }
 ];
 
 export const RecordType = ({ type = types[0].key, onChange }) => {
@@ -104,12 +104,12 @@ const RegistryRecords = ({ type }) => {
               pkgLink = (<PackageLink config={config} type={type} pkg={pkg} />);
             }
 
-            if (type === 'wrn:app') {
+            if (type === 'crn:app') {
               appLinks = (
                 <>
-                  {names.map(wrn =>
-                    <div key={wrn}>
-                      <AppLink config={config} wrn={wrn} />
+                  {(names || []).map(crn =>
+                    <div key={crn}>
+                      <AppLink config={config} crn={crn} />
                     </div>
                   )}
                 </>
@@ -120,7 +120,7 @@ const RegistryRecords = ({ type }) => {
               <TableRow key={id} size='small'>
                 <TableCell monospace>{type}</TableCell>
                 <TableCell monospace>
-                  {appLinks || names.map(name => <div key={name}>{name}</div>)}
+                  {appLinks || (names || []).map(name => <div key={name}>{name}</div>)}
                 </TableCell>
                 <TableCell monospace>
                   {version}
