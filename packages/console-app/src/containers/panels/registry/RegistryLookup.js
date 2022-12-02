@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
 
 const types = [
   { key: 'authority', label: 'Authority' },
-  { key: 'wrn', label: 'WRN' }
+  { key: 'crn', label: 'CRN' }
 ];
 
 export const LookupType = ({ scope = types[0].key, onChange }) => {
@@ -87,9 +87,9 @@ const RegistryLookup = ({ scope }) => {
   const getNames = () => {
     let ret;
     switch (scope) {
-      case 'wrn': {
+      case 'crn': {
         ret = [];
-        records.forEach(item => ret.push(...item.names));
+        records.forEach(item => ret.push(...(item.names || [])));
         break;
       }
 
@@ -98,9 +98,9 @@ const RegistryLookup = ({ scope }) => {
         // TODO(telackey): Should we be able to query WNS for a list of authorities?
         const names = new Set();
         for (const record of records) {
-          for (const name of record.names) {
-            // TODO(telackey): We need a general purpose WRN handling library.
-            names.add(name.replace('wrn://', '').split('/')[0]);
+          for (const name of (record.names || [])) {
+            // TODO(telackey): We need a general purpose CRN handling library.
+            names.add(name.replace('crn://', '').split('/')[0]);
           }
         }
         ret = Array.from(names.values());
@@ -120,7 +120,7 @@ const RegistryLookup = ({ scope }) => {
 
     let result;
     switch (scope) {
-      case 'wrn':
+      case 'crn':
         result = await registry.lookupNames([newInputValue], true);
         break;
 

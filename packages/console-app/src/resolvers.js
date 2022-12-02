@@ -4,7 +4,7 @@
 
 import debug from 'debug';
 
-import { Registry } from '@wirelineio/registry-client';
+import { Registry } from 'laconic-sdk';
 
 import { getServiceUrl } from './util/config';
 
