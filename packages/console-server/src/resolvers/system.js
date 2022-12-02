@@ -94,7 +94,7 @@ const getSystemInfo = async () => {
       version: process.version
     },
 
-    dxos: {
+    laconic: {
       kube: {
         version: getVersionInfo()
       },

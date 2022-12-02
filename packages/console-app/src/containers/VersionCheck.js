@@ -16,7 +16,7 @@ import { useQueryStatusReducer } from '../hooks';
 
 const CHECK_INTERVAL = 5 * 60 * 1000;
 
-const UPDATE_LINK = 'https://github.com/dxos/kube#updating-the-system';
+const UPDATE_LINK = 'https://github.com/laconic/kube#updating-the-system';
 
 const useStyles = makeStyles(theme => ({
   update: {
@@ -42,12 +42,12 @@ const VersionCheck = () => {
       const statusData = JSON.parse(statusResponse.system_status.json);
       const wnsData = JSON.parse(wnsResponse.wns_records.json);
 
-      const current = get(statusData, 'dxos.kube.version', '0.0.0');
+      const current = get(statusData, 'laconic.kube.version', '0.0.0');
 
       let latest = current;
       wnsData.forEach(({ attributes: { name, version } }) => {
         // TODO(burdon): Filter by type (WRN?)
-        if (name.startsWith('dxos/kube:')) {
+        if (name.startsWith('laconic/kube:')) {
           if (compareVersions(version, latest) > 0) {
             latest = version;
           }

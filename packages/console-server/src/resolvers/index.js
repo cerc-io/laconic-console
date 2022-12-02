@@ -12,7 +12,7 @@ import { logResolvers } from './log';
 import { botsResolvers } from './bots';
 
 // eslint-disable-next-line
-const log = debug('dxos:console:server:resolvers');
+const log = debug('laconic:console:server:resolvers');
 
 /**
  * Resolvers
