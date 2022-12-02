@@ -47,8 +47,8 @@ module.exports = {
           name (module) {
             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
 
-            if (packageName.startsWith('@dxos')) {
-              return 'dxos';
+            if (packageName.startsWith('@cerc-io')) {
+              return 'cerc-io';
             }
 
             if (packageName.startsWith('@material-ui')) {
