@@ -5,9 +5,9 @@
 
 app:
   title: 'Console'
-  org': 'DXOS.org'
+  org': 'Laconic.org'
   theme: 'dark'
-  website: 'https://dxos.org'
+  website: 'https://laconic.com'
   publicUrl: '/console'
 
 api:
@@ -17,24 +17,24 @@ api:
   pollInterval: 10000
 
 system:
-  debug: 'dxos:console:*'
+  debug: 'laconic:console:*'
 
 services:
   app:
     prefix: '/app'
-    server: 'https://apollo1.kube.moon.dxos.network'
+    server: 'https://apollo1.kube.moon.laconic.network'
 
   wns:
-    server: 'https://apollo1.kube.moon.dxos.network/dxos/wns/api'
-    webui: 'https://apollo1.kube.moon.dxos.network/dxos/wns/console'
+    server: 'https://apollo1.kube.moon.laconic.network/laconic/wns/api'
+    webui: 'https://apollo1.kube.moon.laconic.network/laconic/wns/console'
 
   signal:
-    server: 'wss://apollo1.kube.moon.dxos.network/dxos/signal'
-    api: 'https://apollo1.kube.moon.dxos.network/dxos/signal/api'
+    server: 'wss://apollo1.kube.moon.laconic.network/laconic/signal'
+    api: 'https://apollo1.kube.moon.laconic.network/laconic/signal/api'
 
   ipfs:
-    server: 'https://apollo1.kube.moon.dxos.network/dxos/ipfs/api'
-    gateway: 'https://apollo1.kube.moon.dxos.network/dxos/ipfs/gateway'
+    server: 'https://apollo1.kube.moon.laconic.network/laconic/ipfs/api'
+    gateway: 'https://apollo1.kube.moon.laconic.network/laconic/ipfs/gateway'
 
   wellknown:
-    endpoint: 'https://apollo1.kube.moon.dxos.network/.well-known/dxos'
+    endpoint: 'https://apollo1.kube.moon.laconic.network/.well-known/laconic'

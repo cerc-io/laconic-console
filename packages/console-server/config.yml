@@ -5,9 +5,9 @@
 
 app:
   title: 'Console'
-  org': 'DXOS.org'
+  org': 'Laconic.org'
   theme: 'dark'
-  website: 'https://dxos.org'
+  website: 'https://laconic.com'
   publicUrl: '/console'
 
 api:
@@ -17,7 +17,7 @@ api:
   pollInterval: 10000
 
 system:
-  debug: 'dxos:console:*'
+  debug: 'laconic:console:*'
 
 services:
   app:
@@ -37,4 +37,4 @@ services:
     gateway: 'http://127.0.0.1:8888/ipfs/'
 
   wellknown:
-    endpoint: 'http://127.0.0.1:9000/.well-known/dxos'
+    endpoint: 'http://127.0.0.1:9000/.well-known/laconic'

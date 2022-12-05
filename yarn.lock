@@ -3812,11 +3812,6 @@
   dependencies:
     jscodeshift "0.6.4"
 
-"@wirelineio/wns-schema@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@wirelineio/wns-schema/-/wns-schema-0.1.1.tgz#ea8c92c49069703bb2fffc111e8d482b880f8c67"
-  integrity sha512-tdMkN+UAy1rywB/Wdm68aHORLpeCTImzegxvg2VuECXQ9JZNHBKEpWxZYYzc2D7HRXO7pcg30IRwfTOQmRYd0Q==
-
 "@wry/context@^0.4.0":
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/@wry/context/-/context-0.4.4.tgz#e50f5fa1d6cfaabf2977d1fda5ae91717f8815f8"
