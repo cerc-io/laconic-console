@@ -49,11 +49,10 @@ This creates the following folders:
 NOTE: GQL and Production files and exported and may be used by the server.
 
 ```javascript
-import QUERY_STATUS from '@dxos/console-client/gql/system_status.graphql';
-import config from '@dxos/console-client/config.json';
+import SYSTEM_STATUS from '@cerc-io/console-app/src/gql/system_status.graphql';
 
 ...
 
-const file = path.join(__dirname + '../../../../node_modules/@dxos/console-client/dist/production', 'index.html');
+const file = path.join(__dirname + '../../../../node_modules/@cerc-io/console-app/dist/production', 'index.html');
 res.sendFile(file);
 ```

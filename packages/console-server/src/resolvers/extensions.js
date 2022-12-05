@@ -17,7 +17,7 @@ const ifBigDipper = () => {
     } else {
       return {
         title: 'Block Explorer',
-        url: 'http://blockexplorer.moon.dxos.network:3080/'
+        url: 'http://blockexplorer.moon.laconic.network:3080/'
       };
     }
   } catch (e) {}
@@ -25,7 +25,7 @@ const ifBigDipper = () => {
 
 const ifRadicle = () => {
   try {
-    const result = childProcess.execSync('docker ps -f "ancestor=dxos/radicle-seed-node" -q');
+    const result = childProcess.execSync('docker ps -f "ancestor=laconic/radicle-seed-node" -q');
     if (result && result.toString()) {
       return {
         title: 'Radicle',
@@ -39,7 +39,7 @@ const ifRadicle = () => {
 const ifSentry = () => {
   return {
     title: 'Sentry',
-    url: 'http://sentry.kube.dxos.network:9000/'
+    url: 'http://sentry.kube.laconic.network:9000/'
   };
 };
 

@@ -17,7 +17,7 @@ import yargs from 'yargs';
 // TODO(burdon): Use once published by @ashwinp.
 // import { extensions as WNS_EXTENSIONS, schema as WNS_SCHEMA } from '@wirelineio/wns-schema';
 
-import SYSTEM_STATUS from '@dxos/console-app/src/gql/system_status.graphql';
+import SYSTEM_STATUS from '@cerc-io/console-app/src/gql/system_status.graphql';
 
 import { resolvers } from '../resolvers';
 
@@ -46,7 +46,7 @@ if (!configFile) {
 
 const config = yaml.safeLoad(fs.readFileSync(configFile));
 
-const log = debug('dxos:console:server');
+const log = debug('laconic:console:server');
 
 debug.enable(config.system.debug);
 
@@ -90,7 +90,7 @@ app.use(cors({
 //
 
 const bundles = [
-  'runtime', 'vendor', 'material-ui', 'dxos', 'main'
+  'runtime', 'vendor', 'material-ui', 'cerc-io', 'main'
 ];
 
 app.use(`${publicUrl}/lib`, express.static('./dist/client'));

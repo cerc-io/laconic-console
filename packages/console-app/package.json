@@ -1,8 +1,8 @@
 {
-  "name": "@dxos/console-app",
+  "name": "@cerc-io/console-app",
   "version": "1.2.9",
   "description": "Kubenet Console Client",
-  "repository": "https://github.com/dxos/console",
+  "repository": "https://github.com/cerc-io/laconic-console",
   "main": "dist/es/index.js",
   "files": [
     "src/gql"
@@ -17,7 +17,7 @@
     "start": "CONFIG_FILE=${CONFIG_FILE:-config-testnet.yml} VERBOSE=true webpack-dev-server --mode development",
     "test": "jest --rootDir ./src --passWithNoTests --no-cache"
   },
-  "author": "DXOS.org",
+  "author": "",
   "license": "GPL-3.0",
   "browserslist": [
     "> 2%"
@@ -31,16 +31,7 @@
     "@babel/runtime": "^7.8.7",
     "@dxos/debug": "^1.0.0-beta.78",
     "@dxos/gem-core": "^1.0.0-beta.25",
-    "@dxos/react-components": "~2.31.4",
-    "@emotion/core": "^11.0.0",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@mui/icons-material": "^5.0.0",
-    "@mui/lab": "^5.0.0-alpha.51",
-    "@mui/material": "^5.0.0",
-    "@mui/styles": "^5.0.0",
-    "@mui/system": "^5.0.0",
-    "@mui/x-data-grid": "^5.0.0-beta.1",
+    "@dxos/react-ux": "https://github.com/dxos-deprecated/sdk.git#v1.1.0-beta.0",
     "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.54",

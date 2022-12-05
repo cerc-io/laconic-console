@@ -10,7 +10,7 @@ Use the following command to run the server at: http://localhost:9004
   yarn start  
 ```
 
-To test the Console app, the `@dxos/console-app` must be built first:
+To test the Console app, the `@cerc-io/console-app` must be built first:
 
 ```bash
   cd ../console-app

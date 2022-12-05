@@ -1,10 +1,10 @@
 {
-  "name": "@dxos/console-server",
+  "name": "@cerc-io/console-server",
   "version": "1.2.9",
   "description": "Kubenet Console Server",
   "main": "dist/es/index.js",
   "bin": {
-    "dxos-console": "bin/console.js"
+    "laconic-console": "bin/console.js"
   },
   "files": [
     "bin/",
@@ -20,7 +20,7 @@
     "test": "jest --rootDir ./src --passWithNoTests --no-cache",
     "start": "CONFIG_FILE=${CONFIG_FILE=./config.yml} BABEL_DISABLE_CACHE=1 nodemon --exec babel-node src/server/main.js -- --verbose"
   },
-  "author": "DXOS.org",
+  "author": "",
   "license": "GPL-3.0",
   "browserslist": [
     "> 5%"
@@ -31,8 +31,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.8.7",
-    "@dxos/console-app": "^1.2.9",
-    "@wirelineio/wns-schema": "^0.1.1",
+    "@cerc-io/console-app": "^1.2.9",
     "apollo-boost": "^0.4.9",
     "apollo-server-express": "^2.13.1",
     "body-parser": "^1.19.0",

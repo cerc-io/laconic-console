@@ -8,7 +8,7 @@ import { Registry } from 'laconic-sdk';
 
 import { getServiceUrl } from './util/config';
 
-const log = debug('dxos:console:client:resolvers');
+const log = debug('laconic:console:client:resolvers');
 
 const timestamp = () => new Date().toUTCString();
 

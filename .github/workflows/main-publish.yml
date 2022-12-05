@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 jobs:
-  publish:
+  test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -17,24 +17,24 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - name: Build and WNS publish
+      - name: Test and build
         run: |
-          git config --global user.email "npm@dxos.org"
-          git config --global user.name "DXOS"
+          # git config --global user.email "npm@dxos.org"
+          # git config --global user.name "DXOS"
           
           yarn install
-          yarn build
-          yarn test
           yarn lint
+          yarn test
+          yarn build
 
           # Uncomment for NPM publishing.
-          npm whoami
-          yarn lerna publish -y prerelease --dist-tag="alpha" --force-publish
+          # npm whoami
+          # yarn lerna publish -y prerelease --dist-tag="alpha" --force-publish
 
           # Publish to WNS
-          yarn wire profile init --name $WIRE_PROFILE --template-url "$WIRE_PROFILE_URL"
-          export PKG_CHANNEL="@alpha"
-          scripts/deploy_apps_to_wns.sh
+          # yarn wire profile init --name $WIRE_PROFILE --template-url "$WIRE_PROFILE_URL"
+          # export PKG_CHANNEL="@alpha"
+          # scripts/deploy_apps_to_wns.sh
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
           WIRE_WNS_USER_KEY: ${{secrets.wns_user_key}}

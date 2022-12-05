@@ -5,9 +5,9 @@
 
 app:
   title: 'Console'
-  org': 'DXOS.org'
+  org': 'Laconic'
   theme: 'dark'
-  website: 'https://dxos.org'
+  website: 'https://laconic.com'
   publicUrl: '/console'
 
 api:
@@ -17,7 +17,7 @@ api:
   pollInterval: 10000
 
 system:
-  debug: 'dxos:console:*'
+  debug: 'laconic:console:*'
 
 services:
   app:
@@ -25,16 +25,16 @@ services:
     server: 'https://kube.local'
 
   wns:
-    server: 'https://kube.local/dxos/wns/api'
-    webui: 'https://kube.local/dxos/wns/console'
+    server: 'https://kube.local/laconic/wns/api'
+    webui: 'https://kube.local/laconic/wns/console'
 
   signal:
-    server: 'wss://kube.local/dxos/signal/api'
-    api: 'https://kube.local/dxos/signal'
+    server: 'wss://kube.local/laconic/signal/api'
+    api: 'https://kube.local/laconic/signal'
 
   ipfs:
-    server: 'https://kube.local/dxos/ipfs/api'
-    gateway: 'https://kube.local/dxos/ipfs/gateway'
+    server: 'https://kube.local/laconic/ipfs/api'
+    gateway: 'https://kube.local/laconic/ipfs/gateway'
 
   wellknown:
-    endpoint: 'https://kube.local/.well-known/dxos'
+    endpoint: 'https://kube.local/.well-known/laconic'
