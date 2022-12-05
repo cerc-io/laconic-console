@@ -19,15 +19,15 @@ import modules from '../modules';
 import Layout from './Layout';
 import ConsoleContextProvider from './ConsoleContextProvider';
 
-import Apps from './panels/apps/Apps';
-import Bots from './panels/bots/Bots';
-import Kubes from './panels/kubes/Kubes';
 import Config from './panels/Config';
-import IPFS from './panels/ipfs/IPFS';
-import Metadata from './panels/Metadata';
-import Signaling from './panels/signal/Signaling';
-import System from './panels/system/System';
 import Registry from './panels/registry/Registry';
+// import Apps from './panels/apps/Apps';
+// import Bots from './panels/bots/Bots';
+// import Kubes from './panels/kubes/Kubes';
+// import IPFS from './panels/ipfs/IPFS';
+// import Metadata from './panels/Metadata';
+// import Signaling from './panels/signal/Signaling';
+// import System from './panels/system/System';
 
 // Global error handler.
 const errorHandler = new ErrorHandler();
@@ -47,15 +47,15 @@ const Main = ({ config }) => {
             <Switch>
               <Route path='/:module'>
                 <Layout>
-                  <Route path='/kubes' component={Kubes} />
-                  <Route path='/apps' component={Apps} />
-                  <Route path='/bots' component={Bots} />
                   <Route path='/config' component={Config} />
                   <Route path='/registry' component={Registry} />
+                  {/* <Route path='/kubes' component={Kubes} />
+                  <Route path='/apps' component={Apps} />
+                  <Route path='/bots' component={Bots} />
                   <Route path='/ipfs' component={IPFS} />
                   <Route path='/metadata' component={Metadata} />
                   <Route path='/signaling' component={Signaling} />
-                  <Route path='/system' component={System} />
+                  <Route path='/system' component={System} /> */}
                 </Layout>
               </Route>
               <Redirect to='/system' />

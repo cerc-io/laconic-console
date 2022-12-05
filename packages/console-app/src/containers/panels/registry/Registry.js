@@ -9,9 +9,9 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import TabContext from '@material-ui/lab/TabContext';
 
-import LogPoller from '../../../components/LogPoller';
 import Panel from '../../../components/Panel';
 import Toolbar from '../../../components/Toolbar';
+// import LogPoller from '../../../components/LogPoller';
 
 import RegistryRecords, { RecordType } from './RegistryRecords';
 import RegistryLookup, { LookupType } from './RegistryLookup';
@@ -19,8 +19,8 @@ import RegistryStatus from './RegistryStatus';
 
 const TAB_RECORDS = 'records';
 const TAB_STATUS = 'status';
-const TAB_LOG = 'log';
 const TAB_LOOKUP = 'lookup';
+// const TAB_LOG = 'log';
 
 const useStyles = makeStyles(() => ({
   expand: {
@@ -54,7 +54,7 @@ const Registry = () => {
             <Tab value={TAB_RECORDS} label='Records' />
             <Tab value={TAB_LOOKUP} label='Lookup' />
             <Tab value={TAB_STATUS} label='Status' />
-            <Tab value={TAB_LOG} label='Log' />
+            {/* <Tab value={TAB_LOG} label='Log' /> */}
           </Tabs>
 
           {tab === TAB_RECORDS && (
@@ -87,11 +87,11 @@ const Registry = () => {
           </div>
         )}
 
-        {tab === TAB_LOG && (
+        {/* {tab === TAB_LOG && (
           <div className={classes.panel}>
             <LogPoller service='wns-lite' />
           </div>
-        )}
+        )} */}
       </TabContext>
     </Panel>
   );
