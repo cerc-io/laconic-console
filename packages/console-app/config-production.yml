@@ -5,7 +5,7 @@
 
 app:
   title: 'Console'
-  org: 'Laconic.org'
+  org: 'Laconic'
   theme: 'dark'
   website: 'https://laconinc.com'
   publicUrl: '/console'
