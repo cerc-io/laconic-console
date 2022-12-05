@@ -13,9 +13,10 @@ import Panel from '../../../components/Panel';
 import Toolbar from '../../../components/Toolbar';
 // import LogPoller from '../../../components/LogPoller';
 
-import RegistryRecords, { RecordType } from './RegistryRecords';
 import RegistryLookup, { LookupType } from './RegistryLookup';
 import RegistryStatus from './RegistryStatus';
+import RegistryRecords from './RegistryRecords';
+// import RegistryRecords, { RecordType } from './RegistryRecords';
 
 const TAB_RECORDS = 'records';
 const TAB_STATUS = 'status';
@@ -43,8 +44,8 @@ const useStyles = makeStyles(() => ({
 const Registry = () => {
   const classes = useStyles();
   const [tab, setTab] = useState(TAB_RECORDS);
-  const [type, setType] = useState();
   const [scope, setScope] = useState(LookupType.default);
+  // const [type, setType] = useState();
 
   return (
     <Panel
@@ -57,9 +58,9 @@ const Registry = () => {
             {/* <Tab value={TAB_LOG} label='Log' /> */}
           </Tabs>
 
-          {tab === TAB_RECORDS && (
+          {/* {tab === TAB_RECORDS && (
             <RecordType type={type} onChange={setType} />
-          )}
+          )} */}
           {tab === TAB_LOOKUP && (
             <LookupType scope={scope} onChange={setScope} />
           )}
@@ -69,7 +70,8 @@ const Registry = () => {
       <TabContext value={tab}>
         {tab === TAB_RECORDS && (
           <div className={classes.panel}>
-            <RegistryRecords type={type} />
+            {/* <RegistryRecords type={type} /> */}
+            <RegistryRecords />
           </div>
         )}
 
