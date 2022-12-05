@@ -62,7 +62,7 @@ const AppBar = ({ config }) => {
           <div className={classes.title}>
             <Typography variant='h6'>{config.app.title}</Typography>
           </div>
-          <div>
+          {/* <div>
             <Link
               className={classes.link}
               href={graphqlApi(config)}
@@ -72,7 +72,7 @@ const AppBar = ({ config }) => {
             >
               <GraphQLIcon />
             </Link>
-          </div>
+          </div> */}
         </Toolbar>
       </MuiAppBar>
 
