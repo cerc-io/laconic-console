@@ -20,7 +20,7 @@ import { ConsoleContext, useStatusReducer } from '../hooks';
 
 import Error from '../components/Error';
 
-import VersionCheck from './VersionCheck';
+// import VersionCheck from './VersionCheck';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -110,7 +110,7 @@ const StatusBar = () => {
 
         <div className={classes.center}>
           <div>{name} [{version} {moment(buildDate).format('L')}]</div>
-          <VersionCheck />
+          {/* <VersionCheck /> */}
         </div>
 
         <div className={classes.right}>

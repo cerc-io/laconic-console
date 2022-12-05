@@ -9,18 +9,19 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import TabContext from '@material-ui/lab/TabContext';
 
-import LogPoller from '../../../components/LogPoller';
 import Panel from '../../../components/Panel';
 import Toolbar from '../../../components/Toolbar';
+// import LogPoller from '../../../components/LogPoller';
 
-import RegistryRecords, { RecordType } from './RegistryRecords';
 import RegistryLookup, { LookupType } from './RegistryLookup';
 import RegistryStatus from './RegistryStatus';
+import RegistryRecords from './RegistryRecords';
+// import RegistryRecords, { RecordType } from './RegistryRecords';
 
 const TAB_RECORDS = 'records';
 const TAB_STATUS = 'status';
-const TAB_LOG = 'log';
 const TAB_LOOKUP = 'lookup';
+// const TAB_LOG = 'log';
 
 const useStyles = makeStyles(() => ({
   expand: {
@@ -43,8 +44,8 @@ const useStyles = makeStyles(() => ({
 const Registry = () => {
   const classes = useStyles();
   const [tab, setTab] = useState(TAB_RECORDS);
-  const [type, setType] = useState();
   const [scope, setScope] = useState(LookupType.default);
+  // const [type, setType] = useState();
 
   return (
     <Panel
@@ -54,12 +55,12 @@ const Registry = () => {
             <Tab value={TAB_RECORDS} label='Records' />
             <Tab value={TAB_LOOKUP} label='Lookup' />
             <Tab value={TAB_STATUS} label='Status' />
-            <Tab value={TAB_LOG} label='Log' />
+            {/* <Tab value={TAB_LOG} label='Log' /> */}
           </Tabs>
 
-          {tab === TAB_RECORDS && (
+          {/* {tab === TAB_RECORDS && (
             <RecordType type={type} onChange={setType} />
-          )}
+          )} */}
           {tab === TAB_LOOKUP && (
             <LookupType scope={scope} onChange={setScope} />
           )}
@@ -69,7 +70,8 @@ const Registry = () => {
       <TabContext value={tab}>
         {tab === TAB_RECORDS && (
           <div className={classes.panel}>
-            <RegistryRecords type={type} />
+            {/* <RegistryRecords type={type} /> */}
+            <RegistryRecords />
           </div>
         )}
 
@@ -87,11 +89,11 @@ const Registry = () => {
           </div>
         )}
 
-        {tab === TAB_LOG && (
+        {/* {tab === TAB_LOG && (
           <div className={classes.panel}>
             <LogPoller service='wns-lite' />
           </div>
-        )}
+        )} */}
       </TabContext>
     </Panel>
   );

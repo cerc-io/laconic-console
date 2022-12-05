@@ -4,8 +4,8 @@
 
 import clsx from 'clsx';
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
 import { useHistory, useParams } from 'react-router';
+// import { useQuery } from '@apollo/react-hooks';
 
 import { makeStyles } from '@material-ui/core';
 import List from '@material-ui/core/List';
@@ -14,8 +14,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import LinkIcon from '@material-ui/icons/ExitToApp';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import EXTENSIONS from '../gql/extensions.graphql';
-import { useQueryStatusReducer } from '../hooks';
+// import EXTENSIONS from '../gql/extensions.graphql';
+// import { useQueryStatusReducer } from '../hooks';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,8 +48,9 @@ const Sidebar = ({ modules: { services, settings } }) => {
   const history = useHistory();
   const { module } = useParams();
 
-  const { data: extensionsData } = useQueryStatusReducer(useQuery(EXTENSIONS));
-  const extensions = extensionsData ? JSON.parse(extensionsData.extensions.json) : [];
+  // const { data: extensionsData } = useQueryStatusReducer(useQuery(EXTENSIONS));
+  // const extensions = extensionsData ? JSON.parse(extensionsData.extensions.json) : [];
+  const extensions = [];
 
   const isSelected = path => path === `/${module}`;
 

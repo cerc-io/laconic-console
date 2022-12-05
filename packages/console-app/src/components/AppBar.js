@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import GraphQLIcon from '@material-ui/icons/Adb';
 
-import DXOSIcon from '../icons/DXOS';
+// import LaconicIcon from '../icons/Laconic';
 import { graphqlApi } from '../client';
 
 const useStyles = makeStyles((theme) => ({
@@ -51,14 +51,18 @@ const AppBar = ({ config }) => {
       <MuiAppBar position='fixed' elevation={0}>
         <Toolbar>
           <Link classes={{ root: classes.logoLink }} href='/'>
-            <div className={classes.logo}>
-              <DXOSIcon />
+            {/* <div className={classes.logo}>
+              <LaconicIcon />
+            </div> */}
+            <div className={classes.title}>
+              <Typography variant='h6'>Laconic</Typography>
             </div>
           </Link>
+          &nbsp;
           <div className={classes.title}>
             <Typography variant='h6'>{config.app.title}</Typography>
           </div>
-          <div>
+          {/* <div>
             <Link
               className={classes.link}
               href={graphqlApi(config)}
@@ -68,7 +72,7 @@ const AppBar = ({ config }) => {
             >
               <GraphQLIcon />
             </Link>
-          </div>
+          </div> */}
         </Toolbar>
       </MuiAppBar>
 
