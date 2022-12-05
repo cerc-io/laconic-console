@@ -58,7 +58,7 @@ const Main = ({ config }) => {
                   <Route path='/system' component={System} /> */}
                 </Layout>
               </Route>
-              <Redirect to='/system' />
+              <Redirect to='/registry' />
             </Switch>
           </HashRouter>
         </ThemeProvider>
