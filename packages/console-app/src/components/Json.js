@@ -5,7 +5,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 
-import { JsonTreeView } from '@dxos/react-ux';
+import { JsonTreeView } from '@lirewine/react-ux';
 
 import { omitDeep } from '../util/omit';
 

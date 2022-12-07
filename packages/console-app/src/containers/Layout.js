@@ -5,7 +5,7 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core';
 
-import { FullScreen } from '@dxos/gem-core';
+import { FullScreen } from '@lirewine/gem-core';
 
 import { ConsoleContext } from '../hooks';
 
