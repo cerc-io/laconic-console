@@ -87,6 +87,7 @@
     "eslint-plugin-jsdoc": "^21.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-standard": "^4.0.1",
+    "graphql": "^15.0.0",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^24.8.0",
     "react-scripts": "^3.4.1",

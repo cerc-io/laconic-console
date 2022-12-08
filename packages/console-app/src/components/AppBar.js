@@ -9,10 +9,10 @@ import Link from '@material-ui/core/Link';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import blueGrey from '@material-ui/core/colors/blueGrey';
-import GraphQLIcon from '@material-ui/icons/Adb';
+// import GraphQLIcon from '@material-ui/icons/Adb';
 
 // import LaconicIcon from '../icons/Laconic';
-import { graphqlApi } from '../client';
+// import { graphqlApi } from '../client';
 
 const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.denseToolbar,
