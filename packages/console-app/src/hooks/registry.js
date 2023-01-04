@@ -2,7 +2,7 @@
 // Copyright 2020 DXOS.org
 //
 
-import { Registry } from 'laconic-sdk';
+import { Registry } from '@cerc-io/laconic-sdk';
 
 import { getServiceUrl } from '../util/config';
 

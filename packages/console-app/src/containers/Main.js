@@ -8,7 +8,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import { ErrorHandler } from '@dxos/debug';
+import { ErrorHandler } from '@lirewine/debug';
 
 import { build } from '../version.json';
 
