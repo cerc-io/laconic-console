@@ -2745,8 +2745,8 @@
 
 "@lirewine/gem-core@1.0.0-beta.28":
   version "1.0.0-beta.28"
-  resolved "http://localhost:3000/api/packages/nabarun/npm/%40lirewine%2Fgem-core/-/1.0.0-beta.28/gem-core-1.0.0-beta.28.tgz#b134454fd6eb4489237f603660f1ed6d09a9569a"
-  integrity sha512-VQWD9G5eg+W88BgRwDDQQRFeBpzhfrJZn9FzUkidQ0UdTg2JRDoeAD8b5dOuksc09CI4Cfqqyv6WnxBTLyRRkA==
+  resolved "https://git.vdb.to/api/packages/cerc-io/npm/%40lirewine%2Fgem-core/-/1.0.0-beta.28/gem-core-1.0.0-beta.28.tgz#447b8b706f28969e430422096fb8ac63fa3f06bd"
+  integrity sha512-1m/Ok3TwsRC4Kv00RC9kgiVGZoidMGzlwjE02z2/PApJsc/FaPNlVmJIIqiNeG42RlxrnybZYpwLEtirZxLhNg==
   dependencies:
     "@material-ui/core" "^4.9.10"
     clsx "^1.1.0"
