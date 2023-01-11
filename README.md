@@ -63,12 +63,6 @@ User interface for submitting and reading records registered on Laconic.
 
     * Copy the private key exported above and assign it to variable `PRIVATE_KEY` in the `.env` file.
 
-    * Also change value of `COSMOS_CHAIN_ID` in `.env` file
-
-      ```env
-      COSMOS_CHAIN_ID=laconic_2345678-1
-      ```
-
     * Install dependencies
 
       ```bash
