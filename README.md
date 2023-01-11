@@ -29,6 +29,17 @@ User interface for submitting and reading records registered on Laconic.
     yarn
     ```
 
+    *NOTE*: There is a warning containing error while installing dependencies
+
+    ```bash
+    warning Error running install script for optional dependency: ".../laconic-console/node_modules/sodium-native: Command failed.
+    Exit code: 1
+    ...
+    Error: ./configure exited with 127
+    ```
+
+    This can be ignored as it is an error for installing optional dependency
+
   * Change directory to [packages/console-app](https://github.com/cerc-io/laconic-console/tree/main/packages/console-app) and start the react app
 
       ```bash
