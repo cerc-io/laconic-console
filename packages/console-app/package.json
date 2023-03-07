@@ -14,7 +14,7 @@
     "clean": "rm -rf dist",
     "dist": "yarn clean && yarn build:babel && CONFIG_FILE=config-production.yml webpack",
     "lint": "semistandard 'src/**/*.js'",
-    "start": "CONFIG_FILE=${CONFIG_FILE:-config-testnet.yml} VERBOSE=true webpack-dev-server --mode development",
+    "start": "CONFIG_FILE=${CONFIG_FILE:-config-testnet.yml} VERBOSE=true webpack-dev-server --host 0.0.0.0 --mode development",
     "test": "jest --rootDir ./src --passWithNoTests --no-cache"
   },
   "author": "",
