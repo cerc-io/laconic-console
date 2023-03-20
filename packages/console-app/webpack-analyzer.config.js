@@ -2,7 +2,7 @@
 // Copyright 2019 DXOS.org
 //
 
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const baseConfig = require('./webpack-common.config');

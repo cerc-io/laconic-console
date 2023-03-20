@@ -2,7 +2,7 @@
 // Copyright 2019 DXOS.org
 //
 
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const commonConfig = require('./webpack-common.config');

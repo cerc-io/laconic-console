@@ -1,7 +1,8 @@
 {
   "build": {
     "name":      "<%= package.name %>",
-    "buildDate": "<%= currentTime.toISOString() %>",
+    <%# TODO: figure out how to get this back (failed in update to Node 18/Webpack5) %>
+    "buildDate": "currentTime.toISOString()",
     "version":   "<%= package.version %>"
   }
 }

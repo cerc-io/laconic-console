@@ -4,6 +4,7 @@
 
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 const VersionFile = require('webpack-version-file-plugin');
 const webpack = require('webpack');
 
@@ -14,19 +15,24 @@ const CONFIG_FILE = path.relative('./src', process.env.CONFIG_FILE || 'config-lo
 module.exports = {
   devtool: 'eval-source-map',
 
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    disableHostCheck: true,
-    port: 8080,
-    watchOptions: {
-      ignored: /node_modules/,
-      aggregateTimeout: 600
-    }
+  watchOptions: {
+    ignored: /node_modules/,
+    aggregateTimeout: 600
   },
 
-  node: {
-    fs: 'empty'
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist")
+    },
+    compress: true,
+    allowedHosts: "all",
+    port: 8080
+  },
+
+  resolve: {
+    fallback: {
+      fs: false
+    }
   },
 
   output: {
@@ -84,7 +90,9 @@ module.exports = {
       template: path.join(__dirname, 'version.ejs'),
       packageFile: path.join(__dirname, 'package.json'),
       outputFile: path.join(__dirname, 'src', 'version.json')
-    })
+    }),
+
+    new NodePolyfillPlugin()
   ],
 
   module: {
@@ -96,11 +104,9 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-
       // https://github.com/eemeli/yaml-loader
       {
         test: /\.ya?ml$/,
-        type: 'json',
         use: 'yaml-loader'
       }
     ]
