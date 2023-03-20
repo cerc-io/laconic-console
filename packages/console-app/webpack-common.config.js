@@ -104,11 +104,9 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-
       // https://github.com/eemeli/yaml-loader
       {
         test: /\.ya?ml$/,
-        type: 'json',
         use: 'yaml-loader'
       }
     ]
