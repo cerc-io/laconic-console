@@ -4,6 +4,7 @@
 
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 const VersionFile = require('webpack-version-file-plugin');
 const webpack = require('webpack');
 
@@ -89,7 +90,9 @@ module.exports = {
       template: path.join(__dirname, 'version.ejs'),
       packageFile: path.join(__dirname, 'package.json'),
       outputFile: path.join(__dirname, 'src', 'version.json')
-    })
+    }),
+
+    new NodePolyfillPlugin()
   ],
 
   module: {
