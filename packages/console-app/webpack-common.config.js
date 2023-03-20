@@ -14,19 +14,24 @@ const CONFIG_FILE = path.relative('./src', process.env.CONFIG_FILE || 'config-lo
 module.exports = {
   devtool: 'eval-source-map',
 
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    disableHostCheck: true,
-    port: 8080,
-    watchOptions: {
-      ignored: /node_modules/,
-      aggregateTimeout: 600
-    }
+  watchOptions: {
+    ignored: /node_modules/,
+    aggregateTimeout: 600
   },
 
-  node: {
-    fs: 'empty'
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist")
+    },
+    compress: true,
+    allowedHosts: "all",
+    port: 8080
+  },
+
+  resolve: {
+    fallback: {
+      fs: false
+    }
   },
 
   output: {
