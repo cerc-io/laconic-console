@@ -12,7 +12,6 @@ module.exports = {
     'import-graphql',
     'inline-json-import',
 
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-export-default-from'
+    '@babel/plugin-proposal-class-properties'
   ]
 };
