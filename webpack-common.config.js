@@ -110,13 +110,6 @@ module.exports = {
         use: 'yaml-loader'
       }
     ]
-  },
-
-  resolve: {
-    alias: {
-      '@material-ui/styles': path.resolve(__dirname, '..', '..', 'node_modules/@material-ui/styles'),
-      'react': path.resolve(__dirname, '..', '..', 'node_modules/react'),
-      'react-dom': path.resolve(__dirname, '..', '..', 'node_modules/react-dom')
-    }
   }
+
 };
