@@ -4,8 +4,6 @@ Laconic Kubenet GraphQL server and console application.
 
 User interface for submitting and reading records registered on Laconic.
 
-![Console](./docs/images/console.png)
-
 ## Development
 
 * Clone the required repos:
@@ -21,9 +19,14 @@ User interface for submitting and reading records registered on Laconic.
     ```bash
     ./init.sh
     ```
+  * For auction functionality enabled, add this environment variable:
+
+    ```bash
+    TEST_AUCTION_ENABLED=true ./init.sh
+    ```
 
 * Run the laconic-console app
-  * In [laconic-console](https://github.com/cerc-io/laconic-console) repo, install dependencies
+  * From the root of this repo, run:
 
     ```bash
     yarn
@@ -40,19 +43,15 @@ User interface for submitting and reading records registered on Laconic.
 
     This can be ignored as it is an error for installing optional dependency
 
-  * Change directory to [packages/console-app](https://github.com/cerc-io/laconic-console/tree/main/packages/console-app) and start the react app
+  * Start the app:
 
-      ```bash
-      # Change directory
-      cd packages/console-app/
-      
-      # Start app
+      ```bash 
       CONFIG_FILE=config-local.yml yarn start
       ```
 
-  * Open console-app at <http://localhost:8080>
+  * Open console at <http://localhost:8080>
 
-  * To view records in the app, test suite in laconic-sdk can be run
+  * To view records in the console, the test suite in laconic-sdk can be run
 
     * Clone the [laconic-sdk](https://github.com/cerc-io/laconic-sdk) repo:
 
@@ -88,4 +87,4 @@ User interface for submitting and reading records registered on Laconic.
 
       *NOTE*: One test from [util.test.ts](https://github.com/cerc-io/laconic-sdk/blob/main/src/util.test.ts) fails as mentioned in the [PR](https://github.com/cerc-io/laconic-sdk/pull/5#issuecomment-1299572012)
 
-    * Open console-app at <http://localhost:8080> to view the records.
+    * Open console at <http://localhost:8080> to view the records.
