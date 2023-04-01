@@ -12,7 +12,7 @@
     "build": "yarn dist",
     "build:babel": "babel ./src --out-dir ./dist/es --ignore \"**/*.test.js\" --source-maps inline",
     "clean": "rm -rf dist",
-    "dist": "yarn clean && yarn build:babel && CONFIG_FILE=config-production.yml webpack",
+    "dist": "yarn clean && yarn build:babel && CONFIG_FILE=${LACONIC_HOSTED_CONFIG_FILE:-config-production.yml} webpack",
     "lint": "semistandard 'src/**/*.js'",
     "start": "CONFIG_FILE=${CONFIG_FILE:-config-testnet.yml} VERBOSE=true webpack-dev-server --mode development",
     "test": "jest --rootDir ./src --passWithNoTests --no-cache"

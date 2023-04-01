@@ -1,0 +1,42 @@
+#
+# NODE_ENV=development
+# NOTE: Set CONFIG_FILE to swap out this config file.
+#
+
+# TODO: write a tool to automated insertion of the template strings in files like this.
+
+app:
+  title: 'Console'
+  org': 'Laconic'
+  theme: 'dark'
+  website: 'LACONIC_HOSTED_CONFIG_app_website' # e.g. https://laconic.com
+  publicUrl: '/console'
+
+api:
+  server: 'LACONIC_HOSTED_CONFIG_api_server' # e.g. http://127.0.0.1:9004
+  path: '/api'
+  intervalLog: 5000
+  pollInterval: 10000
+
+system:
+  debug: 'laconic:console:*'
+
+services:
+  app:
+    prefix: '/app'
+    server: 'LACONIC_HOSTED_CONFIG_services_app_server' # e.g. http://127.0.0.1:5999
+
+  wns:
+    server: 'LACONIC_HOSTED_CONFIG_services_wns_server' # e.g. http://127.0.0.1:9473/api
+    webui: 'LACONIC_HOSTED_CONFIG_services_wns_webui' # e.g. http://127.0.0.1:9473/console
+
+  signal:
+    server: 'LACONIC_HOSTED_CONFIG_services_signal_server' # e.g. ws://127.0.0.1:4000
+    api: 'LACONIC_HOSTED_CONFIG_services_signal_api' # e.g. http://127.0.0.1:4000/api
+
+  ipfs:
+    server: 'LACONIC_HOSTED_CONFIG_services_ipfs_server' # e.g. http://127.0.0.1:5001
+    gateway: 'LACONIC_HOSTED_CONFIG_services_ipfs_gateway' # e.g. http://127.0.0.1:8888/ipfs/
+
+  wellknown:
+    endpoint: 'LACONIC_HOSTED_CONFIG_services_wellknown_endpoint' # e.g. http://127.0.0.1:9000/.well-known/laconic
