@@ -24,7 +24,7 @@ jobs:
       - run: yarn
       - name: Run yarn build
         run: |
-          yarn build
+          yarn dist
       - name: Configure git.vdb.to npm registry
         run: |
           npm config set registry https://git.vdb.to/api/packages/cerc-io/npm/

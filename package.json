@@ -1,6 +1,6 @@
 {
   "name": "@cerc-io/console-app",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Laconic Console",
   "repository": "https://github.com/cerc-io/laconic-console",
   "main": "dist/es/index.js",
@@ -12,7 +12,8 @@
     "build": "yarn dist",
     "build:babel": "babel ./src --out-dir ./dist/es --ignore \"**/*.test.js\" --source-maps inline",
     "clean": "rm -rf dist",
-    "dist": "yarn clean && yarn build:babel && CONFIG_FILE=${LACONIC_HOSTED_CONFIG_FILE:-config-production.yml} webpack",
+    "updatever": "scripts/update_version.sh > src/version.json",
+    "dist": "yarn clean && yarn updatever && yarn build:babel && CONFIG_FILE=${LACONIC_HOSTED_CONFIG_FILE:-config-production.yml} webpack",
     "lint": "semistandard 'src/**/*.js'",
     "start": "CONFIG_FILE=${CONFIG_FILE:-config-testnet.yml} VERBOSE=true webpack-dev-server --mode development",
     "test": "jest --rootDir ./src --passWithNoTests --no-cache"
