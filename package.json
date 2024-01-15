@@ -1,6 +1,6 @@
 {
   "name": "@cerc-io/console-app",
-  "version": "1.3.3",
+  "version": "1.3.5",
   "description": "Laconic Console",
   "repository": "https://github.com/cerc-io/laconic-console",
   "main": "dist/es/index.js",

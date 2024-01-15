@@ -17,6 +17,9 @@ jobs:
         run: |
           curl -fsSL -o /usr/local/bin/yarn https://github.com/yarnpkg/yarn/releases/download/v1.22.21/yarn-1.22.21.js
           chmod +x /usr/local/bin/yarn
+      - name: Install jq
+        run: |
+          apt update && apt install -y jq
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
