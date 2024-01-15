@@ -27,7 +27,7 @@ jobs:
       - run: yarn
       - name: Run yarn build
         run: |
-          yarn dist
+          LACONIC_HOSTED_CONFIG_FILE=config-hosted.yml yarn dist
       - name: Configure git.vdb.to npm registry
         run: |
           npm config set registry https://git.vdb.to/api/packages/cerc-io/npm/
