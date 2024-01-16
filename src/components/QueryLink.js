@@ -10,8 +10,41 @@ import LinkIcon from '@material-ui/icons/ExitToApp';
 import { getServiceUrl } from '../util/config';
 
 const QUERY = `
-  query {
-    getRecordsByIds(ids: [ "%ID%" ]) {
+  fragment ValueParts on Value {
+    ... on BooleanValue {
+      bool: value
+    }
+    ... on IntValue {
+      int: value
+    }
+    ... on FloatValue {
+      float: value
+    }
+    ... on StringValue {
+      string: value
+    }
+    ... on BytesValue {
+      bytes: value
+    }
+    ... on LinkValue {
+      link: value
+    }
+  }
+
+  fragment AttrParts on Attribute {
+    key
+    value {
+      ...ValueParts
+      ... on ArrayValue {
+        value {
+          ...ValueParts
+        }
+      }
+    }
+  }
+
+  {
+    getRecordsByIds(ids: ["%ID%"]) {
       id
       names
       bondId
@@ -19,12 +52,12 @@ const QUERY = `
       expiryTime
       owners
       attributes {
-        key
+        ...AttrParts
         value {
-          string
-          json
-          reference {
-            id
+          ... on MapValue {
+            map: value {
+              ...AttrParts
+            }
           }
         }
       }
