@@ -31,13 +31,13 @@ const useStyles = makeStyles(theme => ({
 
 const types = [
   { key: null, label: 'ALL' },
-  { key: 'crn:kube', label: 'Kube' },
-  { key: 'crn:service', label: 'Service' },
-  { key: 'crn:app', label: 'App' },
-  { key: 'crn:bot', label: 'Bot' },
-  { key: 'crn:bot-factory', label: 'Bot Factory' },
-  { key: 'crn:file', label: 'File' },
-  { key: 'crn:type', label: 'Type' }
+  { key: 'lrn:kube', label: 'Kube' },
+  { key: 'lrn:service', label: 'Service' },
+  { key: 'lrn:app', label: 'App' },
+  { key: 'lrn:bot', label: 'Bot' },
+  { key: 'lrn:bot-factory', label: 'Bot Factory' },
+  { key: 'lrn:file', label: 'File' },
+  { key: 'lrn:type', label: 'Type' }
 ];
 
 export const RecordType = ({ type = types[0].key, onChange }) => {
@@ -104,12 +104,12 @@ const RegistryRecords = ({ type }) => {
               pkgLink = (<PackageLink config={config} type={type} pkg={pkg} />);
             }
 
-            if (type === 'crn:app') {
+            if (type === 'lrn:app') {
               appLinks = (
                 <>
-                  {(names || []).map(crn =>
-                    <div key={crn}>
-                      <AppLink config={config} crn={crn} />
+                  {(names || []).map(lrn =>
+                    <div key={lrn}>
+                      <AppLink config={config} lrn={lrn} />
                     </div>
                   )}
                 </>

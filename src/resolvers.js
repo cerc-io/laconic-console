@@ -4,7 +4,7 @@
 
 import debug from 'debug';
 
-import { Registry } from '@cerc-io/laconic-sdk';
+import { Registry } from '@cerc-io/registry-sdk';
 
 import { getServiceUrl } from './util/config';
 

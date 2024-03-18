@@ -7,14 +7,14 @@ User interface for submitting and reading records registered on Laconic.
 ## Development
 
 * Clone the required repos:
-  * [laconicd](https://github.com/cerc-io/laconicd)
+  * [laconic2d](https://git.vdb.to/cerc-io/laconic2d)
 
     ```bash
-    git clone git@github.com:cerc-io/laconicd.git
+    git clone git@git.vdb.to:cerc-io/laconic2d.git
     ```
 
-* Run the `laconicd` chain:
-  * In [laconicd](https://github.com/cerc-io/laconicd) repo, start the chain
+* Run the `laconic2d` chain:
+  * In [laconic2d](https://git.vdb.to/cerc-io/laconic2d) repo, start the chain
 
     ```bash
     ./init.sh
@@ -45,21 +45,21 @@ User interface for submitting and reading records registered on Laconic.
 
   * Start the app:
 
-      ```bash 
+      ```bash
       CONFIG_FILE=config-local.yml yarn start
       ```
 
   * Open console at <http://localhost:8080>
 
-  * To view records in the console, the test suite in laconic-sdk can be run
+  * To view records in the console, the test suite in registry-sdk can be run
 
-    * Clone the [laconic-sdk](https://github.com/cerc-io/laconic-sdk) repo:
+    * Clone the [registry-sdk](https://git.vdb.to/cerc-io/registry-sdk) repo:
 
       ```bash
-      git clone git@github.com:cerc-io/laconic-sdk.git
+      git clone git@git.vdb.to:cerc-io/registry-sdk.git
       ```
 
-    * In [laconic-sdk](https://github.com/cerc-io/laconic-sdk) repo, copy [.env.example](https://github.com/cerc-io/laconic-sdk/blob/main/.env.example) file and create a `.env` file
+    * In [registry-sdk](https://git.vdb.to/cerc-io/registry-sdk) repo, copy [.env.example](https://git.vdb.to/cerc-io/registry-sdk/blob/main/.env.example) file and create a `.env` file
 
       ```bash
       cp .env.example .env
@@ -68,7 +68,7 @@ User interface for submitting and reading records registered on Laconic.
     * Export the private key using:
 
       ```bash
-      laconicd keys export mykey --unarmored-hex --unsafe
+      laconic2d keys export mykey --unarmored-hex --unsafe
       ```
 
     * Copy the private key exported above and assign it to variable `PRIVATE_KEY` in the `.env` file.
@@ -79,12 +79,12 @@ User interface for submitting and reading records registered on Laconic.
       yarn
       ```
 
-    * Run the tests in laconic-sdk repo:
+    * Run the tests in registry-sdk repo:
 
       ```bash
       yarn test
       ```
 
-      *NOTE*: One test from [util.test.ts](https://github.com/cerc-io/laconic-sdk/blob/main/src/util.test.ts) fails as mentioned in the [PR](https://github.com/cerc-io/laconic-sdk/pull/5#issuecomment-1299572012)
+      *NOTE*: One test from [util.test.ts](https://git.vdb.to/cerc-io/registry-sdk/blob/main/src/util.test.ts) fails as mentioned in the [PR](https://git.vdb.to/cerc-io/registry-sdk/pull/5#issuecomment-1299572012)
 
     * Open console at <http://localhost:8080> to view the records.

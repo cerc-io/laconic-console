@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
 
 const types = [
   { key: 'authority', label: 'Authority' },
-  { key: 'crn', label: 'CRN' }
+  { key: 'lrn', label: 'LRN' }
 ];
 
 export const LookupType = ({ scope = types[0].key, onChange }) => {
@@ -87,7 +87,7 @@ const RegistryLookup = ({ scope }) => {
   const getNames = () => {
     let ret;
     switch (scope) {
-      case 'crn': {
+      case 'lrn': {
         ret = [];
         records.forEach(item => ret.push(...(item.names || [])));
         break;
@@ -99,8 +99,8 @@ const RegistryLookup = ({ scope }) => {
         const names = new Set();
         for (const record of records) {
           for (const name of (record.names || [])) {
-            // TODO(telackey): We need a general purpose CRN handling library.
-            names.add(name.replace('crn://', '').split('/')[0]);
+            // TODO(telackey): We need a general purpose LRN handling library.
+            names.add(name.replace('lrn://', '').split('/')[0]);
           }
         }
         ret = Array.from(names.values());
@@ -120,7 +120,7 @@ const RegistryLookup = ({ scope }) => {
 
     let result;
     switch (scope) {
-      case 'crn':
+      case 'lrn':
         result = await registry.lookupNames([newInputValue], true);
         break;
 
