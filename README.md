@@ -17,12 +17,7 @@ User interface for submitting and reading records registered on Laconic.
   * In [laconic2d](https://git.vdb.to/cerc-io/laconic2d) repo, start the chain
 
     ```bash
-    ./init.sh
-    ```
-  * For auction functionality enabled, add this environment variable:
-
-    ```bash
-    TEST_AUCTION_ENABLED=true ./init.sh
+    ./scripts/init.sh clean
     ```
 
 * Run the laconic-console app
@@ -68,7 +63,7 @@ User interface for submitting and reading records registered on Laconic.
     * Export the private key using:
 
       ```bash
-      laconic2d keys export mykey --unarmored-hex --unsafe
+      laconic2d keys export alice --keyring-backend test  --unarmored-hex --unsafe
       ```
 
     * Copy the private key exported above and assign it to variable `PRIVATE_KEY` in the `.env` file.
