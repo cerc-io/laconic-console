@@ -31,7 +31,7 @@
     "@apollo/react-components": "^4.0.0",
     "@apollo/react-hooks": "^4.0.0",
     "@babel/runtime": "^7.21.0",
-    "@cerc-io/registry-sdk": "^0.2.0",
+    "@cerc-io/registry-sdk": "^0.2.1",
     "@lirewine/debug": "1.0.0-beta.78",
     "@lirewine/gem-core": "1.0.0-beta.28",
     "@lirewine/react-ux": "1.1.0-beta.1",
