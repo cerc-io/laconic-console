@@ -7,14 +7,14 @@ User interface for submitting and reading records registered on Laconic.
 ## Development
 
 * Clone the required repos:
-  * [laconic2d](https://git.vdb.to/cerc-io/laconic2d)
+  * [laconicd](https://git.vdb.to/cerc-io/laconicd)
 
     ```bash
-    git clone git@git.vdb.to:cerc-io/laconic2d.git
+    git clone git@git.vdb.to:cerc-io/laconicd.git
     ```
 
-* Run the `laconic2d` chain:
-  * In [laconic2d](https://git.vdb.to/cerc-io/laconic2d) repo, start the chain
+* Run the `laconicd` chain:
+  * In [laconicd](https://git.vdb.to/cerc-io/laconicd) repo, start the chain
 
     ```bash
     ./scripts/init.sh clean
@@ -63,7 +63,7 @@ User interface for submitting and reading records registered on Laconic.
     * Export the private key using:
 
       ```bash
-      laconic2d keys export alice --keyring-backend test  --unarmored-hex --unsafe
+      laconicd keys export alice --keyring-backend test  --unarmored-hex --unsafe
       ```
 
     * Copy the private key exported above and assign it to variable `PRIVATE_KEY` in the `.env` file.
