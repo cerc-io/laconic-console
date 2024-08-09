@@ -14,6 +14,7 @@ module.exports = merge(commonConfig, {
     // https://github.com/jantimon/html-webpack-plugin#options
     new HtmlWebPackPlugin({
       template: './public/index.html',
+      favicon: './public/favicon.ico',
       templateParameters: {
         title: 'Console'
       }
