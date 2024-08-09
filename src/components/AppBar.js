@@ -5,13 +5,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import MuiAppBar from "@material-ui/core/AppBar";
+import Divider from "@material-ui/core/Divider";
 import Link from "@material-ui/core/Link";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 // import GraphQLIcon from '@material-ui/icons/Adb';
 
-// import LaconicIcon from '../icons/Laconic';
+import LaconicIcon from "../icons/Logo";
 // import { graphqlApi } from '../client';
 
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +42,14 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: blueGrey[900],
   },
+
+  divider: {
+    backgroundColor: theme.palette.text.primary,
+    width: "1px",
+    height: "20px",
+    alignSelf: "center",
+    marginRight: 14,
+  },
 }));
 
 const AppBar = ({ config }) => {
@@ -49,16 +58,17 @@ const AppBar = ({ config }) => {
   return (
     <>
       <MuiAppBar position="fixed" elevation={0}>
-        <Toolbar sx={{ backgroundColor: "#0000F4" }}>
+        <Toolbar>
           <Link classes={{ root: classes.logoLink }} href="/">
-            {/* <div className={classes.logo}>
+            <div className={classes.logo}>
               <LaconicIcon />
-            </div> */}
-            <div className={classes.title}>
-              <Typography variant="h6">Laconic</Typography>
             </div>
           </Link>
-          &nbsp;
+          <Divider
+            orientation="vertical"
+            flexItem
+            className={classes.divider}
+          />
           <div className={classes.title}>
             <Typography variant="h6">{config.app.title}</Typography>
           </div>
