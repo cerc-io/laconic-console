@@ -28,7 +28,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'space-between',
-    backgroundColor: grey[900],
+    backgroundColor: theme.palette.background.default,
+    borderTop: 1,
+    borderTopColor: "rgba(255, 255, 255, 0.12)",
+    borderTopStyle: "solid",
     color: grey[400]
   },
   left: {

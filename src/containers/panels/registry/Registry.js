@@ -2,43 +2,48 @@
 // Copyright 2020 DXOS.org
 //
 
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
-import TabContext from '@material-ui/lab/TabContext';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
+import TabContext from "@material-ui/lab/TabContext";
 
-import Panel from '../../../components/Panel';
-import Toolbar from '../../../components/Toolbar';
+import Panel from "../../../components/Panel";
+import Toolbar from "../../../components/Toolbar";
 // import LogPoller from '../../../components/LogPoller';
 
-import RegistryLookup, { LookupType } from './RegistryLookup';
-import RegistryStatus from './RegistryStatus';
-import RegistryRecords from './RegistryRecords';
+import RegistryLookup, { LookupType } from "./RegistryLookup";
+import RegistryStatus from "./RegistryStatus";
+import RegistryRecords from "./RegistryRecords";
 // import RegistryRecords, { RecordType } from './RegistryRecords';
 
-const TAB_RECORDS = 'records';
-const TAB_STATUS = 'status';
-const TAB_LOOKUP = 'lookup';
+const TAB_RECORDS = "records";
+const TAB_STATUS = "status";
+const TAB_LOOKUP = "lookup";
 // const TAB_LOG = 'log';
 
 const useStyles = makeStyles(() => ({
   expand: {
-    flex: 1
+    flex: 1,
   },
 
   panel: {
-    display: 'flex',
-    overflowY: 'scroll',
-    flex: 1
+    display: "flex",
+    overflowY: "scroll",
+    flex: 1,
   },
 
   paper: {
-    display: 'flex',
-    overflow: 'hidden',
-    flex: 1
-  }
+    display: "flex",
+    overflow: "hidden",
+    flex: 1,
+  },
+
+  tabs: {
+    fontFamily: '"DM Mono", monospace',
+    fontWeight: 400,
+  },
 }));
 
 const Registry = () => {
@@ -51,10 +56,14 @@ const Registry = () => {
     <Panel
       toolbar={
         <Toolbar>
-          <Tabs value={tab} onChange={(_, value) => setTab(value)}>
-            <Tab value={TAB_RECORDS} label='Records' />
-            <Tab value={TAB_LOOKUP} label='Lookup' />
-            <Tab value={TAB_STATUS} label='Status' />
+          <Tabs
+            value={tab}
+            onChange={(_, value) => setTab(value)}
+            indicatorColor="primary"
+          >
+            <Tab value={TAB_RECORDS} label="Records" className={classes.tabs} />
+            <Tab value={TAB_LOOKUP} label="Lookup" className={classes.tabs} />
+            <Tab value={TAB_STATUS} label="Status" className={classes.tabs} />
             {/* <Tab value={TAB_LOG} label='Log' /> */}
           </Tabs>
 

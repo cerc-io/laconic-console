@@ -2,16 +2,17 @@
 // Copyright 2020 DXOS.org
 //
 
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import MuiAppBar from '@material-ui/core/AppBar';
-import Link from '@material-ui/core/Link';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import React from "react";
+import { makeStyles } from "@material-ui/core";
+import MuiAppBar from "@material-ui/core/AppBar";
+import Divider from "@material-ui/core/Divider";
+import Link from "@material-ui/core/Link";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import blueGrey from "@material-ui/core/colors/blueGrey";
 // import GraphQLIcon from '@material-ui/icons/Adb';
 
-// import LaconicIcon from '../icons/Laconic';
+import LaconicIcon from "../icons/Logo";
 // import { graphqlApi } from '../client';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,26 +22,34 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
     color: theme.palette.grey[800],
 
-    '& svg': {
+    "& svg": {
       width: 100,
-      height: 48
-    }
+      height: 48,
+    },
   },
 
   logoLink: {
-    lineHeight: 0
+    lineHeight: 0,
   },
 
   title: {
-    display: 'flex',
+    display: "flex",
     flex: 1,
     marginTop: 2,
-    color: theme.palette.grey[800]
+    color: "#FBFBFB",
   },
 
   link: {
-    color: blueGrey[900]
-  }
+    color: blueGrey[900],
+  },
+
+  divider: {
+    backgroundColor: theme.palette.text.primary,
+    width: "1px",
+    height: "20px",
+    alignSelf: "center",
+    marginRight: 14,
+  },
 }));
 
 const AppBar = ({ config }) => {
@@ -48,19 +57,20 @@ const AppBar = ({ config }) => {
 
   return (
     <>
-      <MuiAppBar position='fixed' elevation={0}>
+      <MuiAppBar position="fixed" elevation={0} color="primary">
         <Toolbar>
-          <Link classes={{ root: classes.logoLink }} href='/'>
-            {/* <div className={classes.logo}>
+          <Link classes={{ root: classes.logoLink }} href="/">
+            <div className={classes.logo}>
               <LaconicIcon />
-            </div> */}
-            <div className={classes.title}>
-              <Typography variant='h6'>Laconic</Typography>
             </div>
           </Link>
-          &nbsp;
+          <Divider
+            orientation="vertical"
+            flexItem
+            className={classes.divider}
+          />
           <div className={classes.title}>
-            <Typography variant='h6'>{config.app.title}</Typography>
+            <Typography variant="h6">{config.app.title}</Typography>
           </div>
           {/* <div>
             <Link
