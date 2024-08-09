@@ -32,7 +32,16 @@ const useStyles = makeStyles((theme) => ({
   listItem: {
     display: "flex",
     alignItems: "center",
+    backgroundColor: theme.palette.background.default,
+  },
+
+  selected: {
     backgroundColor: theme.palette.background.secondary,
+  },
+
+  itemText: {
+    fontFamily: '"DM Mono", monospace',
+    fontWeight: 400,
   },
 
   icon: {
@@ -68,7 +77,7 @@ const Sidebar = ({ modules: { services, settings } }) => {
           selected={isSelected(path)}
           key={path}
           onClick={() => history.push(path)}
-          className={classes.listItem}
+          classes={{ root: classes.listItem, selected: classes.selected }}
         >
           <ListItemIcon classes={{ root: classes.icon }}>
             <Icon
@@ -78,7 +87,10 @@ const Sidebar = ({ modules: { services, settings } }) => {
               )}
             />
           </ListItemIcon>
-          <ListItemText primary={title.toUpperCase()} />
+          <ListItemText
+            primary={title.toUpperCase()}
+            classes={{ primary: classes.itemText }}
+          />
         </ListItem>
       ))}
     </List>
@@ -103,7 +115,10 @@ const Sidebar = ({ modules: { services, settings } }) => {
             <ListItemIcon classes={{ root: classes.icon }}>
               <LinkIcon className={clsx(classes.icon)} />
             </ListItemIcon>
-            <ListItemText primary={title} />
+            <ListItemText
+              primary={title.toUpperCase()}
+              classes={{ primary: classes.itemText }}
+            />
           </ListItem>
         );
       })}

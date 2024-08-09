@@ -39,6 +39,11 @@ const useStyles = makeStyles(() => ({
     overflow: "hidden",
     flex: 1,
   },
+
+  tabs: {
+    fontFamily: '"DM Mono", monospace',
+    fontWeight: 400,
+  },
 }));
 
 const Registry = () => {
@@ -56,9 +61,9 @@ const Registry = () => {
             onChange={(_, value) => setTab(value)}
             indicatorColor="primary"
           >
-            <Tab value={TAB_RECORDS} label="Records" />
-            <Tab value={TAB_LOOKUP} label="Lookup" />
-            <Tab value={TAB_STATUS} label="Status" />
+            <Tab value={TAB_RECORDS} label="Records" className={classes.tabs} />
+            <Tab value={TAB_LOOKUP} label="Lookup" className={classes.tabs} />
+            <Tab value={TAB_STATUS} label="Status" className={classes.tabs} />
             {/* <Tab value={TAB_LOG} label='Log' /> */}
           </Tabs>
 
