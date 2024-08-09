@@ -57,7 +57,7 @@ const AppBar = ({ config }) => {
 
   return (
     <>
-      <MuiAppBar position="fixed" elevation={0}>
+      <MuiAppBar position="fixed" elevation={0} color="primary">
         <Toolbar>
           <Link classes={{ root: classes.logoLink }} href="/">
             <div className={classes.logo}>

@@ -63,6 +63,9 @@ export const createTheme = (theme) =>
             primary: {
               main: "#0000F4",
             },
+            secondary: {
+              main: "#A2A2FF",
+            },
             background: {
               default: "#18181A",
               secondary: "#18181A",

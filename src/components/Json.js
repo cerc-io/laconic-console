@@ -14,9 +14,18 @@ const useStyles = makeStyles(() => ({
     flex: 1,
   },
 }));
+const useTreeStyles = makeStyles(
+  (theme) => ({
+    colorPrimary: {
+      color: theme.palette.secondary.main,
+    },
+  }),
+  { name: "MuiTypography" },
+);
 
 const Json = ({ data }) => {
   const classes = useStyles();
+  useTreeStyles();
 
   return (
     <JsonTreeView
