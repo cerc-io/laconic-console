@@ -2,20 +2,21 @@
 // Copyright 2020 DXOS.org
 //
 
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import MuiToolbar from '@material-ui/core/Toolbar';
+import React from "react";
+import { makeStyles } from "@material-ui/core";
+import MuiToolbar from "@material-ui/core/Toolbar";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   toolbar: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    whiteSpace: 'nowrap',
+    display: "flex",
+    justifyContent: "space-between",
+    whiteSpace: "nowrap",
 
-    '& > button': {
-      margin: theme.spacing(0.5)
-    }
-  }
+    "& > button": {
+      margin: theme.spacing(0.5),
+    },
+    color: "primary",
+  },
 }));
 
 // TODO(burdon): Tabs.

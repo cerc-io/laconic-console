@@ -5,7 +5,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 
-import { JsonTreeView } from '@lirewine/react-ux';
+// import { JsonTreeView } from '@lirewine/react-ux';
 
 import { omitDeep } from '../util/omit';
 
@@ -18,9 +18,10 @@ const useStyles = makeStyles(() => ({
 const Json = ({ data }) => {
   const classes = useStyles();
 
-  return (
-    <JsonTreeView className={classes.root} data={omitDeep(data, '__typename')} />
-  );
+  return null
+  // return (
+  //   <JsonTreeView className={classes.root} data={omitDeep(data, '__typename')} />
+  // );
 };
 
 export default Json;

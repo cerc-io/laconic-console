@@ -2,13 +2,13 @@
 // Copyright 2020 DXOS.org
 //
 
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import MuiAppBar from '@material-ui/core/AppBar';
-import Link from '@material-ui/core/Link';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import React from "react";
+import { makeStyles } from "@material-ui/core";
+import MuiAppBar from "@material-ui/core/AppBar";
+import Link from "@material-ui/core/Link";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import blueGrey from "@material-ui/core/colors/blueGrey";
 // import GraphQLIcon from '@material-ui/icons/Adb';
 
 // import LaconicIcon from '../icons/Laconic';
@@ -21,26 +21,26 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
     color: theme.palette.grey[800],
 
-    '& svg': {
+    "& svg": {
       width: 100,
-      height: 48
-    }
+      height: 48,
+    },
   },
 
   logoLink: {
-    lineHeight: 0
+    lineHeight: 0,
   },
 
   title: {
-    display: 'flex',
+    display: "flex",
     flex: 1,
     marginTop: 2,
-    color: theme.palette.grey[800]
+    color: "#FBFBFB",
   },
 
   link: {
-    color: blueGrey[900]
-  }
+    color: blueGrey[900],
+  },
 }));
 
 const AppBar = ({ config }) => {
@@ -48,19 +48,19 @@ const AppBar = ({ config }) => {
 
   return (
     <>
-      <MuiAppBar position='fixed' elevation={0}>
-        <Toolbar>
-          <Link classes={{ root: classes.logoLink }} href='/'>
+      <MuiAppBar position="fixed" elevation={0}>
+        <Toolbar sx={{ backgroundColor: "#0000F4" }}>
+          <Link classes={{ root: classes.logoLink }} href="/">
             {/* <div className={classes.logo}>
               <LaconicIcon />
             </div> */}
             <div className={classes.title}>
-              <Typography variant='h6'>Laconic</Typography>
+              <Typography variant="h6">Laconic</Typography>
             </div>
           </Link>
           &nbsp;
           <div className={classes.title}>
-            <Typography variant='h6'>{config.app.title}</Typography>
+            <Typography variant="h6">{config.app.title}</Typography>
           </div>
           {/* <div>
             <Link
