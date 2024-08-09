@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   selected: {
-    color: theme.palette.primary.main,
+    color: theme.palette.text.primary,
   },
 
   expand: {
