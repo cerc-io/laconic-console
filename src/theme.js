@@ -67,13 +67,14 @@ export const createTheme = (theme) =>
               main: "#A2A2FF",
             },
             background: {
-              default: "#18181A",
+              default: "#0F0F0F",
               secondary: "#18181A",
               paper: "#18181A",
             },
             text: {
               primary: "#FBFBFB",
               secondary: "#BDBCC3",
+              lineLabel: "#A2A2FF",
             },
           }
         : {
