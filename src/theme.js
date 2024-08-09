@@ -68,6 +68,10 @@ export const createTheme = (theme) =>
               secondary: "#18181A",
               paper: "#18181A",
             },
+            text: {
+              primary: "#FBFBFB",
+              secondary: "#BDBCC3",
+            },
           }
         : {
             primary: teal,
