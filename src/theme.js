@@ -64,7 +64,7 @@ export const createTheme = (theme) =>
               main: "#0000F4",
             },
             background: {
-              default: "#0F0F0F",
+              default: "#18181A",
               secondary: "#18181A",
               paper: "#18181A",
             },
