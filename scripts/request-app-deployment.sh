@@ -11,8 +11,8 @@ rcd_app_version=$(jq -r '.version' package.json | sed 's/null//')
 cat <<EOF > "$CONFIG_FILE"
 services:
   registry:
-    rpcEndpoint: '${CERC_REGISTRY_RPC_ENDPOINT:-http://testnet-a-1.dev.vaasl.io:26657}'
-    gqlEndpoint: '${CERC_REGISTRY_GQL_ENDPOINT:-http://testnet-a-1.dev.vaasl.io:9473/api}'
+    rpcEndpoint: '${CERC_REGISTRY_RPC_ENDPOINT:-http://testnet-a-2.dev.vaasl.io:26657}'
+    gqlEndpoint: '${CERC_REGISTRY_GQL_ENDPOINT:-http://testnet-a-2.dev.vaasl.io:9473/api}'
     chainId: ${CERC_REGISTRY_CHAIN_ID:-laconic-08062024}
     gas: 900000
     fees: 900000alnt
@@ -30,6 +30,8 @@ if [ -z "$APP_RECORD" ] || [ "null" == "$APP_RECORD" ]; then
   exit 1
 fi
 
+MY_ACCOUNT=$(laconic -c $CONFIG_FILE registry account get --user-key "${CERC_REGISTRY_USER_KEY}" | jq -r '.[0].address')
+
 cat <<EOF | sed '/.*: ""$/d' > "$RECORD_FILE"
 record:
   type: ApplicationDeploymentRequest
@@ -38,6 +40,7 @@ record:
   application: "$CERC_REGISTRY_APP_LRN@$rcd_app_version"
   dns: "$CERC_REGISTRY_DEPLOYMENT_HOSTNAME"
   deployment: "$CERC_REGISTRY_DEPLOYMENT_LRN"
+  to: $MY_ACCOUNT
   config:
     env:
       CERC_WEBAPP_DEBUG: "$rcd_app_version"
