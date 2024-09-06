@@ -3,7 +3,7 @@
 //
 
 import moment from 'moment';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { makeStyles } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -11,6 +11,8 @@ import Button from '@material-ui/core/Button';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableBody from '@material-ui/core/TableBody';
+import TableFooter from '@material-ui/core/TableFooter';
+import TablePagination from '@material-ui/core/TablePagination';
 
 import WNS_RECORDS from '../../../gql/wns_records.graphql';
 
@@ -68,9 +70,14 @@ export const RecordType = ({ type = types[0].key, onChange }) => {
 const RegistryRecords = ({ type }) => {
   const { config } = useContext(ConsoleContext);
   const [sorter, sortBy] = useSorter('createTime', false);
-  const { data } = useQueryStatusReducer(useQuery(WNS_RECORDS, {
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const offset = page * rowsPerPage;
+
+  const { data, refetch } = useQueryStatusReducer(useQuery(WNS_RECORDS, {
     pollInterval: config.api.intervalQuery,
-    variables: { attributes: { type } }
+    variables: { attributes: { type, limit: rowsPerPage, offset: offset } }
   }));
 
   if (!data) {
@@ -78,6 +85,27 @@ const RegistryRecords = ({ type }) => {
   }
 
   const records = JSON.parse(data.wns_records.json);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+    const offset = newPage * rowsPerPage;
+    refetch({ attributes: { type, limit: rowsPerPage, offset } });
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    const newRowsPerPage = parseInt(event.target.value, 10);
+    setRowsPerPage(newRowsPerPage);
+    setPage(0);
+    refetch({ attributes: { type, limit: newRowsPerPage, offset: 0 } });
+  };
+
+  const labelDisplayedRows = ({ from, to }) => {
+    if (rowsPerPage > records.length) {
+      return `${from}-${from + records.length - 1}`;
+    } else {
+      return `${from}-${to}`;
+    }
+  };
 
   return (
     <Table>
@@ -142,6 +170,23 @@ const RegistryRecords = ({ type }) => {
           }
           )}
       </TableBody>
+      <TableFooter>
+        <TableRow>
+          <TablePagination
+            component="td"
+            rowsPerPageOptions={[5, 10, 25]}
+            count={-1}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+            labelDisplayedRows={labelDisplayedRows}
+            nextIconButtonProps={{
+              disabled: records.length < rowsPerPage,
+            }}
+          />
+        </TableRow>
+      </TableFooter>
     </Table>
   );
 };
