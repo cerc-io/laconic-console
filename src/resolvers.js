@@ -46,7 +46,7 @@ export const createResolvers = config => {
       wns_records: async (_, { attributes }) => {
         log('WNS records...');
 
-        const {limit, offset, ...queryAttributes } = attributes;
+        const {limit, offset, ...queryAttributes } = attributes || {};
         const data = await registry.queryRecords(queryAttributes, false, false, limit, offset);
 
         return {

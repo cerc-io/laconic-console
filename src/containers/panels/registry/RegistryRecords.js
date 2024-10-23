@@ -11,8 +11,8 @@ import Button from '@material-ui/core/Button';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableBody from '@material-ui/core/TableBody';
-import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
+import { Paper, TableContainer, } from '@material-ui/core';
 
 import WNS_RECORDS from '../../../gql/wns_records.graphql';
 
@@ -108,86 +108,78 @@ const RegistryRecords = ({ type }) => {
   };
 
   return (
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell onClick={sortBy('attributes.type')} size='medium'>Type</TableCell>
-          <TableCell onClick={sortBy('names[0]')}>Registered Names</TableCell>
-          <TableCell onClick={sortBy('attributes.version')} size='small'>Version</TableCell>
-          <TableCell onClick={sortBy('attributes.name')}>Display Name</TableCell>
-          <TableCell onClick={sortBy('createTime')} size='small'>Created</TableCell>
-          <TableCell onClick={sortBy('attributes.package')}>Package</TableCell>
-          <TableCell size='icon' />
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {records.sort(sorter)
-          .map((record) => {
-            const { id, names, createTime, attributes: { type, name: displayName, fileName, version, description, service, package: pkg } } = record;
+    <Paper style={{
+      width: '100%',
+    }}>
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell onClick={sortBy('attributes.type')} size='medium'>Type</TableCell>
+              <TableCell onClick={sortBy('names[0]')}>Registered Names</TableCell>
+              <TableCell onClick={sortBy('attributes.version')} size='small'>Version</TableCell>
+              <TableCell onClick={sortBy('attributes.name')}>Display Name</TableCell>
+              <TableCell onClick={sortBy('createTime')} size='small'>Created</TableCell>
+              <TableCell onClick={sortBy('attributes.package')}>Package</TableCell>
+              <TableCell size='icon' />
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {records.sort(sorter).map((record) => {
+              const { id, names, createTime, attributes: { type, name: displayName, fileName, version, description, service, package: pkg } } = record;
 
-            let pkgLink;
-            let appLinks;
+              let pkgLink;
+              let appLinks;
 
-            if (pkg) {
-              pkgLink = (<PackageLink config={config} type={type} pkg={pkg} />);
-            }
+              if (pkg) {
+                pkgLink = (<PackageLink config={config} type={type} pkg={pkg} />);
+              }
 
-            if (type === 'lrn:app') {
-              appLinks = (
-                <>
-                  {(names || []).map(lrn =>
-                    <div key={lrn}>
-                      <AppLink config={config} lrn={lrn} />
-                    </div>
-                  )}
-                </>
+              if (type === 'lrn:app') {
+                appLinks = (
+                  <>
+                    {(names || []).map(lrn =>
+                      <div key={lrn}>
+                        <AppLink config={config} lrn={lrn} />
+                      </div>
+                    )}
+                  </>
+                );
+              }
+
+              return (
+                <TableRow key={id} size='small'>
+                  <TableCell monospace>{type}</TableCell>
+                  <TableCell monospace>
+                    {appLinks || (names || []).map(name => <div key={name}>{name}</div>)}
+                  </TableCell>
+                  <TableCell monospace>{version}</TableCell>
+                  <TableCell>{displayName || service || fileName || description}</TableCell>
+                  <TableCell>{moment.utc(createTime).fromNow()}</TableCell>
+                  <TableCell monospace>{pkgLink}</TableCell>
+                  <TableCell>
+                    <QueryLink config={config} id={id} icon />
+                  </TableCell>
+                </TableRow>
               );
-            }
-
-            return (
-              <TableRow key={id} size='small'>
-                <TableCell monospace>{type}</TableCell>
-                <TableCell monospace>
-                  {appLinks || (names || []).map(name => <div key={name}>{name}</div>)}
-                </TableCell>
-                <TableCell monospace>
-                  {version}
-                </TableCell>
-                <TableCell>
-                  {displayName || service || fileName || description}
-                </TableCell>
-                <TableCell>
-                  {moment.utc(createTime).fromNow()}
-                </TableCell>
-                <TableCell monospace>
-                  {pkgLink}
-                </TableCell>
-                <TableCell>
-                  <QueryLink config={config} id={id} icon />
-                </TableCell>
-              </TableRow>
-            );
-          }
-          )}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TablePagination
-            component="td"
-            rowsPerPageOptions={[5, 10, 25]}
-            count={-1}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-            labelDisplayedRows={labelDisplayedRows}
-            nextIconButtonProps={{
-              disabled: records.length < rowsPerPage,
-            }}
-          />
-        </TableRow>
-      </TableFooter>
-    </Table>
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        component="td"
+        rowsPerPageOptions={[5, 10, 25]}
+        count={-1}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        labelDisplayedRows={labelDisplayedRows}
+        nextIconButtonProps={{
+          disabled: records.length < rowsPerPage,
+        }}
+      />
+    </Paper>
   );
 };
 
